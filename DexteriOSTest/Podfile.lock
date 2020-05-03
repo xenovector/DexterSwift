@@ -1,0 +1,16 @@
+PODS:
+  - DexterSwift (1.0.0)
+
+DEPENDENCIES:
+  - DexterSwift (from `../DexterSwift/`)
+
+EXTERNAL SOURCES:
+  DexterSwift:
+    :path: "../DexterSwift/"
+
+SPEC CHECKSUMS:
+  DexterSwift: 6050060533602175911737f2dd6c121cdd778b06
+
+PODFILE CHECKSUM: 37e5b5c028830d1719675cb07b9fff02afba5e92
+
+COCOAPODS: 1.8.4

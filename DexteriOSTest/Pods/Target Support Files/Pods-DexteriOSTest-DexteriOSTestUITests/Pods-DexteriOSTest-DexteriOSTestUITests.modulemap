@@ -1,0 +1,6 @@
+framework module Pods_DexteriOSTest_DexteriOSTestUITests {
+  umbrella header "Pods-DexteriOSTest-DexteriOSTestUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

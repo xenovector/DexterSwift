@@ -1,0 +1,6 @@
+framework module DexterSwift {
+  umbrella header "DexterSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

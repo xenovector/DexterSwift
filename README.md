@@ -15,7 +15,7 @@ Download and drop `/Source` folder in your project.
 ## Requirements
 
 * Swift 5
-* iOS 11 or higher
+* iOS 9 or higher
 
 ## Authors
 

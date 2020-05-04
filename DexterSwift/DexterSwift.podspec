@@ -13,7 +13,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "9.0"
   spec.source       = { :git => "https://github.com/xenovector/DexterSwift.git", :tag => "v#{spec.version}" }
   spec.swift_version = "5.0"
-  spec.source_files = "DexterSwift/**/*.swift"
+  spec.source_files = "DexterSwift/**/*"
   spec.exclude_files = ["DexterSwift/**/*.plist", "DexterSwift/**/*.xcuserstate"]
   # spec.ios.deployment_target  = '9.0'
 

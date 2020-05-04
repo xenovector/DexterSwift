@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "DexterSwift"
-  spec.version      = "1.0.3"
+  spec.version      = "1.0.4"
   spec.summary      = "A DexterSwift Library project for own and public use."
   spec.description  = <<-DESC
   There are a lot of useful extension that are free to be use.

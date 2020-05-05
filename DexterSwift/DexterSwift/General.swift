@@ -10,9 +10,8 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class General {
-    
-    static let shared = General()
+public class DexterGeneral {
+    //public static let shared = DexterGeneral()
     private let defaults = UserDefaults.standard
     //let mainstoryboard = UIStoryboard(name: "Main", bundle: nil)
     var keyWindow: UIWindow? {
@@ -27,13 +26,12 @@ class General {
         }
     }
     
-    
     public func AppInfo() -> (version: String, build: Int) {
         let bundleInfo = Bundle.main.infoDictionary!
         let szBuild = bundleInfo["CFBundleVersion"] as! String
         let szVersion = bundleInfo["CFBundleShortVersionString"] as! String
         //if live == false {
-            General.dexterPrint("szVersion: \(szVersion),  szBuild: \(szBuild)")
+            DexterGeneral.dexterPrint("szVersion: \(szVersion),  szBuild: \(szBuild)")
         //}
         return (szVersion, Int(szBuild) ?? 0)
     }
@@ -53,10 +51,10 @@ class General {
         
         device.isBatteryMonitoringEnabled = true
         let b_level = device.batteryLevel * 100
-        General.dexterPrint("battery percentage: \(b_level)")
-        General.dexterPrint("DeviceInfo:\ndeviceName: \(deviceName)\niOSName: \(iosName)\niOSVersion: \(iosVersion)\ndeviceModel: \(deviceModel)\ndeviceModelName: \(deviceModelName)\nlocalizeModel: \(localizeModel)\nuserInterfaceType: \(userInterfaceType)\ndeviceUUID: \(deviceUUID)")
-        General.dexterPrint("freeSpace: \(freeSpace.rounded().decimalTo(0)) GB")
-        General.dexterPrint("totalSpace: \(totalSpace.rounded().decimalTo(0)) GB")
+        DexterGeneral.dexterPrint("battery percentage: \(b_level)")
+        DexterGeneral.dexterPrint("DeviceInfo:\ndeviceName: \(deviceName)\niOSName: \(iosName)\niOSVersion: \(iosVersion)\ndeviceModel: \(deviceModel)\ndeviceModelName: \(deviceModelName)\nlocalizeModel: \(localizeModel)\nuserInterfaceType: \(userInterfaceType)\ndeviceUUID: \(deviceUUID)")
+        DexterGeneral.dexterPrint("freeSpace: \(freeSpace.rounded().decimalTo(0)) GB")
+        DexterGeneral.dexterPrint("totalSpace: \(totalSpace.rounded().decimalTo(0)) GB")
     }
     
     public func noInternet(_ vc: UIViewController, handle: @escaping (UIAlertAction) -> Void)
@@ -154,7 +152,7 @@ class General {
             player.prepareToPlay()
             player.play()
         } catch let error as NSError {
-            General.dexterPrint(error.description)
+            DexterGeneral.dexterPrint(error.description)
         }
     }
     
@@ -182,7 +180,7 @@ class General {
         lUniqueIncreasement += 1
         if lUniqueIncreasement>=1000000000 { lUniqueIncreasement=(lUniqueIncreasement % 1000000000)+1 }
         let lUnique = ((lTimeStamp % 9223000000) * 1000000000) + lUniqueIncreasement
-        General.dexterPrint("lUnique: \(lUnique)\n")
+        DexterGeneral.dexterPrint("lUnique: \(lUnique)\n")
         return lUnique
     }
     
@@ -214,7 +212,7 @@ class General {
         }
         if UIApplication.shared.canOpenURL(settingsUrl) {
             UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                General.dexterPrint("Settings opened: \(success)")
+                DexterGeneral.dexterPrint("Settings opened: \(success)")
             })
         }
     }
@@ -241,28 +239,28 @@ class General {
         let value: Int?
         switch ImgToDetect.imageOrientation {
         case UIImage.Orientation.up:
-            General.dexterPrint("orientation up // 1")
+            DexterGeneral.dexterPrint("orientation up // 1")
             value = 1
         case UIImage.Orientation.down:
-            General.dexterPrint("orientation down // 3")
+            DexterGeneral.dexterPrint("orientation down // 3")
             value = 3
         case UIImage.Orientation.left:
-            General.dexterPrint("orientation left // 8")
+            DexterGeneral.dexterPrint("orientation left // 8")
             value = 8
         case UIImage.Orientation.right:
-            General.dexterPrint("orientation right // 6")
+            DexterGeneral.dexterPrint("orientation right // 6")
             value = 6
         case UIImage.Orientation.upMirrored:
-            General.dexterPrint("orientation upMirrored // 2")
+            DexterGeneral.dexterPrint("orientation upMirrored // 2")
             value = 2
         case UIImage.Orientation.downMirrored:
-            General.dexterPrint("orientation downMirrored // 4")
+            DexterGeneral.dexterPrint("orientation downMirrored // 4")
             value = 4
         case UIImage.Orientation.leftMirrored:
-            General.dexterPrint("orientation leftMirrored // 5")
+            DexterGeneral.dexterPrint("orientation leftMirrored // 5")
             value = 5
         case UIImage.Orientation.rightMirrored:
-            General.dexterPrint("orientation rightMirrored // 7")
+            DexterGeneral.dexterPrint("orientation rightMirrored // 7")
             value = 7
         @unknown default:
             fatalError()
@@ -276,10 +274,10 @@ class General {
         if let _ = faces?.first as? CIFaceFeature {
             //print("found bounds are \(face.bounds)")
             //if faces!.count != 0 { }
-            General.dexterPrint("faces!.count: \(faces!.count)")
+            DexterGeneral.dexterPrint("faces!.count: \(faces!.count)")
             return true
         } else {
-            General.dexterPrint("No Face")
+            DexterGeneral.dexterPrint("No Face")
             return false
         }
     }

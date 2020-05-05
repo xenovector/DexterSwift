@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "DexterSwift"
-  spec.version      = "1.0.4"
+  spec.version      = "1.0.5"
   spec.summary      = "A DexterSwift Library project for own and public use."
   spec.description  = <<-DESC
   There are a lot of useful extension that are free to be use.
@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   spec.homepage     = "https://github.com/xenovector/DexterSwift"
   spec.license      = "MIT"
   spec.author             = { "Dexter" => "dexter@etctech.com.my" }
-  spec.platform     = :ios, "9.0"
+  spec.platform     = :ios, "10.0"
   spec.source       = { :git => "https://github.com/xenovector/DexterSwift.git", :tag => "v#{spec.version}" }
   spec.swift_version = "5.0"
   spec.source_files = "DexterSwift/**/*"

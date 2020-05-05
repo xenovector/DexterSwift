@@ -38,12 +38,12 @@ public extension String {
     func printBase64FromSHA1HexString() {
         var hexString = self
         hexString.removeAll(where: {$0 == ":"})
-        General.dexterPrint("hexString: \(hexString)")
+        DexterGeneral.dexterPrint("hexString: \(hexString)")
         if let data = hexString.hexadecimalData() {
             let base64 = data.base64EncodedString()
-            General.dexterPrint("base64: \(base64),\ncharacters count: \(base64.count)")
+            DexterGeneral.dexterPrint("base64: \(base64),\ncharacters count: \(base64.count)")
         } else {
-            General.dexterPrint("base64: Failed")
+            DexterGeneral.dexterPrint("base64: Failed")
         }
     }
     
@@ -157,7 +157,9 @@ public extension Data {
         do {
             return try NSAttributedString(data: self, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
         } catch {
-            General.dexterPrint("error:", error)
+            if !DexterSwift.cancelDexterPrint {
+                print("[DexterSwift]: error: ", error)
+            }
             return  nil
         }
     }
@@ -622,7 +624,7 @@ public extension UIDevice {
                 return Double(size/1000/1000)/1000
             }
         }else{
-            General.dexterPrint("Error Obtaining System Memory Info:")
+            DexterGeneral.dexterPrint("Error Obtaining System Memory Info:")
         }
         return 0
     }
@@ -635,7 +637,7 @@ public extension UIDevice {
                 return Double(size/1000/1000)/1000
             }
         }else{
-            General.dexterPrint("Error Obtaining System Memory Info:")
+            DexterGeneral.dexterPrint("Error Obtaining System Memory Info:")
         }
         return 0
     }
@@ -741,7 +743,7 @@ public extension UIDevice {
             return identifier + String(UnicodeScalar(UInt8(value)))
         }
         
-        General.dexterPrint("\nUIDevice.model_Name: \(identifier)")
+        DexterGeneral.dexterPrint("\nUIDevice.model_Name: \(identifier)")
         
         func mapToDevice(identifier: String) -> String { // swiftlint:disable:this cyclomatic_complexity
             #if os(iOS)

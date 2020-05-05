@@ -11,9 +11,8 @@ import UIKit
 import LocalAuthentication
 
 public class DexterSwift {
-    //private init() {}
-    static let shared = General()
-    
+    private init() {}
+    public static let general = DexterGeneral()
     private static var cancelPrint = false
     public static var cancelDexterPrint: Bool {
         set {
@@ -137,7 +136,7 @@ public class DexterSwift {
         let preferredLang = NSLocale.preferredLanguages.first ?? "en"
         let supposedLang = String(preferredLang.prefix(2))
         
-        General.dexterPrint("supposedLang: \(supposedLang), preferredLang: \(preferredLang)")
+        DexterGeneral.dexterPrint("supposedLang: \(supposedLang), preferredLang: \(preferredLang)")
         
         if supposedLang == "zh" {
             if preferredLang.hasPrefix("zh-Hans") {

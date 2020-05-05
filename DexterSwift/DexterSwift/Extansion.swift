@@ -38,12 +38,12 @@ public extension String {
     func printBase64FromSHA1HexString() {
         var hexString = self
         hexString.removeAll(where: {$0 == ":"})
-        print("hexString: \(hexString)")
+        General.dexterPrint("hexString: \(hexString)")
         if let data = hexString.hexadecimalData() {
             let base64 = data.base64EncodedString()
-            print("base64: \(base64),\ncharacters count: \(base64.count)")
+            General.dexterPrint("base64: \(base64),\ncharacters count: \(base64.count)")
         } else {
-            print("base64: Failed")
+            General.dexterPrint("base64: Failed")
         }
     }
     
@@ -94,17 +94,19 @@ public extension String {
         let nums: Set<Character> = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
         return Set(self).isSubset(of: nums)
     }
+    
     /*func localized() -> String {
         let lang = General.shared.appLang ?? "en"
         let path = Bundle.main.path(forResource: lang, ofType: "lproj")
         let bundle = Bundle(path: path!)
         return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
-    }
+    }*/
+    
     func localized(_ lang: String) -> String {
         let path = Bundle.main.path(forResource: lang, ofType: "lproj")
         let bundle = Bundle(path: path!)
         return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
-    }*/
+    }
     /**
      This function format string for %s usage.
      - Parameter str: The value to replace %s
@@ -155,7 +157,7 @@ public extension Data {
         do {
             return try NSAttributedString(data: self, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
         } catch {
-            print("error:", error)
+            General.dexterPrint("error:", error)
             return  nil
         }
     }
@@ -620,7 +622,7 @@ public extension UIDevice {
                 return Double(size/1000/1000)/1000
             }
         }else{
-            print("Error Obtaining System Memory Info:")
+            General.dexterPrint("Error Obtaining System Memory Info:")
         }
         return 0
     }
@@ -633,7 +635,7 @@ public extension UIDevice {
                 return Double(size/1000/1000)/1000
             }
         }else{
-            print("Error Obtaining System Memory Info:")
+            General.dexterPrint("Error Obtaining System Memory Info:")
         }
         return 0
     }
@@ -739,7 +741,7 @@ public extension UIDevice {
             return identifier + String(UnicodeScalar(UInt8(value)))
         }
         
-        print("\nUIDevice.model_Name: \(identifier)")
+        General.dexterPrint("\nUIDevice.model_Name: \(identifier)")
         
         func mapToDevice(identifier: String) -> String { // swiftlint:disable:this cyclomatic_complexity
             #if os(iOS)

@@ -10,6 +10,7 @@
 		B3A2F68D245E795E00017F37 /* DexterSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A2F68B245E795E00017F37 /* DexterSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B3A2F695245E799C00017F37 /* DexterSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2F693245E799C00017F37 /* DexterSwift.swift */; };
 		B3A2F696245E799C00017F37 /* Extansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2F694245E799C00017F37 /* Extansion.swift */; };
+		B3B2A21E24610A3B00E856A1 /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B2A21D24610A3B00E856A1 /* General.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +19,7 @@
 		B3A2F68C245E795E00017F37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3A2F693245E799C00017F37 /* DexterSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DexterSwift.swift; sourceTree = "<group>"; };
 		B3A2F694245E799C00017F37 /* Extansion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extansion.swift; sourceTree = "<group>"; };
+		B3B2A21D24610A3B00E856A1 /* General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +53,9 @@
 			isa = PBXGroup;
 			children = (
 				B3A2F68B245E795E00017F37 /* DexterSwift.h */,
-				B3A2F693245E799C00017F37 /* DexterSwift.swift */,
 				B3A2F694245E799C00017F37 /* Extansion.swift */,
+				B3A2F693245E799C00017F37 /* DexterSwift.swift */,
+				B3B2A21D24610A3B00E856A1 /* General.swift */,
 				B3A2F68C245E795E00017F37 /* Info.plist */,
 			);
 			path = DexterSwift;
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B2A21E24610A3B00E856A1 /* General.swift in Sources */,
 				B3A2F695245E799C00017F37 /* DexterSwift.swift in Sources */,
 				B3A2F696245E799C00017F37 /* Extansion.swift in Sources */,
 			);

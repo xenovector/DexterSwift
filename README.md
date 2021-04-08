@@ -19,7 +19,7 @@ Download and drop `/Source` folder in your project.
 
 ## Authors
 
-* **Dexter** -  [xenovector](https://github.com/xenovector), kindly contact me at dexter@etctech.com.my
+* **Dexter** -  [xenovector](https://github.com/xenovector), kindly contact me at dextergold.personal@gmail.com
 
 ## Communication
 
